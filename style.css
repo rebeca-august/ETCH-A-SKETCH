@@ -7,6 +7,7 @@ html, body{
 .container{
     display: flex;
     flex-wrap: wrap;
+    background-color: black;
 }
 
 .cell{
@@ -17,13 +18,14 @@ html, body{
 .reset-btn{
     position: absolute;
     top: 50px;
-    left: 50%;
+    left: 80%;
     padding: 10px;
-    border: 5px solid black;
+    border: 3px solid white;
     border-radius: 5px;
-    background-color: pink;
+    background-color: #28A98F;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 15px;
+    color: white;
     cursor: pointer;
     outline: none;
 }

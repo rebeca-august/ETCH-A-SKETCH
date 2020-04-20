@@ -1,4 +1,4 @@
-const DEFAULT_SIZE = 64;
+const DEFAULT_SIZE = 100;
 const grid = document.querySelector(".container");
 const resetBtn = document.querySelector(".reset-btn");
 
@@ -40,6 +40,6 @@ const createGrid = (gridSize) => {
     };
 };
 
-createGrid(16);
+createGrid(100);
 
 
