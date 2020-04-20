@@ -1,8 +1,9 @@
+const DEFAULT_SIZE = 64;
 const grid = document.querySelector(".container");
 const resetBtn = document.querySelector(".reset-btn");
 
-resetBtn.addEventListener("click", (e) => {
-    const gridSize = prompt("What size do you want to be your canvas?", 64)
+resetBtn.addEventListener("click", () => {
+    const gridSize = prompt("What size do you want to be your canvas?", DEFAULT_SIZE);
     createGrid(gridSize);
 });
 
@@ -22,18 +23,19 @@ const createCell = size => {
         const isLeftMouseButtonClicked = e.buttons === 1;
 
         if (isLeftMouseButtonClicked) {
-            cell.style.backgroundColor = `rgb(${random(256)}, ${random(256)}, ${random(256)})`
+            cell.style.backgroundColor = `rgb(${random(256)}, ${random(256)}, ${random(256)})`;
         }
     });
     grid.append(cell);
-}
+};
 
-function createGrid(size) {
+const createGrid = (gridSize) => {
     resetGrid(grid);
+    const size = gridSize || DEFAULT_SIZE;
 
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
-            createCell(size)
+            createCell(size);
         };
     };
 };
