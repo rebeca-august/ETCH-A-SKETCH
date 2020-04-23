@@ -1,11 +1,32 @@
 const DEFAULT_SIZE = 100;
 const grid = document.querySelector(".container");
 const resetBtn = document.querySelector(".reset-btn");
+const optionContainer = document.querySelector(".options-container");
+const optionButton = document.querySelector(".options-button");
+const backgroundColorInput = document.querySelector(".fav-color");
+const brushSizeInput = document.querySelector(".brush-size");
+
+optionButton.addEventListener("click", () => {
+    optionButton.classList.toggle("spin");
+    optionContainer.classList.toggle("active");
+});
+
 
 resetBtn.addEventListener("click", () => {
-    const gridSize = prompt("What size do you want to be your canvas?", DEFAULT_SIZE);
-    createGrid(gridSize);
+    createGrid(DEFAULT_SIZE);
+    resetBtn.classList.toggle("pulse");
 });
+
+backgroundColorInput.addEventListener("change", (e) => {
+    const backgroundColor = e.target.value;
+    grid.style.backgroundColor = backgroundColor;
+});
+
+brushSizeInput.addEventListener("change", (e) => {
+    const brushSize = e.target.value;
+    createGrid(brushSize);
+});
+
 
 const random = max => Math.floor(Math.random() * Math.floor(max));
 

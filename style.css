@@ -8,25 +8,136 @@ html, body{
     display: flex;
     flex-wrap: wrap;
     background-color: black;
+    transition: background-color 1s linear ;
 }
 
 .cell{
     box-sizing: border-box;
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background-color: #4ecdc4;
+}
+
+.header-title-container {
+    display: flex;
+    align-items: baseline;
+    font-family: monospace;
+}
+
+.header-title{
+    margin: 0;
+    color: white;
+    font-size: 25px;
+}
+
+.header-subtitle {
+    margin: 0;
+    font-family: monospace;
+    color: black;
+    font-size: 15px;
+    font-weight: lighter;
+    padding-left: 10px;
+}
+
+
+.options-button{
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    transition: transform 0.5s ease-in-out;
+}
+
+.options-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.options-container{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 20px;
+    background: #4ecdc4;
+    font-family: monospace;
+    border-top: 1px solid black;
+}
+
+.options-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.option{
+    margin-bottom: 15px;
+}
 
 .reset-btn{
     position: absolute;
-    top: 50px;
-    left: 80%;
-    padding: 10px;
-    border: 3px solid white;
-    border-radius: 5px;
-    background-color: #28A98F;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    left: 37%;
+    font-family: monospace;
     color: white;
     cursor: pointer;
+    border: 1px dotted black;
+    border-radius: 3px;
     outline: none;
+    background: transparent;
+    transition: transform 0.5s ease-out;
 }
 
+.fav-color{
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    padding: 0;   
+}
+
+.brush-size{
+    width: 40px;
+    height: 20px;
+    border: none;
+    background: transparent;
+}
+
+.brush-size-info{
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+.spin{
+    transform: rotateZ(90deg);
+    transform-origin: center;
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
