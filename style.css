@@ -13,6 +13,7 @@ html, body{
 
 .cell{
     box-sizing: border-box;
+    user-select: none;
 }
 
 .header{
