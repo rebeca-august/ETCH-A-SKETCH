@@ -2,48 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css">
 
-    <title>Etch-a-sketch</title>
+	<title>Etch-a-sketch</title>
 </head>
 
 <body>
-    <div class="header">
-        <div class="header-title-container">
-            <h3 class="header-title">Unleash your creativity!</h3>
-            <span class="header-subtitle">(click & drag)</span>
-        </div>
+	<div class="header">
+		<div class="header-title-container">
+			<h3 class="header-title">Unleash your creativity!</h3>
+			<span class="header-subtitle">(click & drag)</span>
+		</div>
 
-        <button class="options-button" type="button">
-            <img class="options-icon" src="../etch-a-sketch/assets/settings.png" alt="settings-icon">
-        </button>
+		<button class="options-button" type="button">
+			<img class="options-icon" src="../etch-a-sketch/assets/settings.png" alt="settings-icon">
+		</button>
 
-        <div class="options-container">
-            <div class="option">
-                <label for="fav-color">Background color:</label>
-                <input class="fav-color" type="color" id="fav-color" value="#000000">
+		<div class="options-container">
+			<div class="option">
+				<label for="fav-color">Background color:</label>
+				<input class="fav-color" type="color" id="fav-color" value="#000000">
+			</div>
 
-            </div>
+			<div class="option">
+				<label for="brush-size">Brush size:</label>
+				<input class="brush-size" type="number" id="brush-size" value="100">
+			</div>
 
-            <div class="option">
-                <label for="brush-size">Brush size:</label>
-                <input class="brush-size" type="number" id="brush-size" value="100">
-                <h3 class="brush-size-info"> N.B. The size is reversed.</h3>
-            </div>
+			<div class="option option-list">
+				<span class="option-list-title">Please note:</span>
+				<ul class="option-info-list">
+					<li class="option-info">The size is reversed</li>
+					<li class="option-info">Hold Shift to Erase</li>
+				</ul>
+			</div>
 
-            <div class="option">
-                <button class="reset-btn" type="button">Clear out</button>
-            </div>
+			<button class="reset-btn" type="button">Clear out</button>
+		</div>
+	</div>
 
-        </div>
-    </div>
+	<div class="container"></div>
 
-    <div class="container"></div>
-
-    <script src="script.js"></script>
+	<script src="script.js"></script>
 </body>
 
 </html>

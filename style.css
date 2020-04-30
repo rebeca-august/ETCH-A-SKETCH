@@ -75,6 +75,7 @@ html, body{
 .options-container.active{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
@@ -83,16 +84,18 @@ html, body{
 }
 
 .reset-btn{
-    position: absolute;
-    left: 37%;
-    font-family: monospace;
+    align-self: center;
     color: white;
     cursor: pointer;
     border: 1px dotted black;
     border-radius: 3px;
     outline: none;
     background: transparent;
-    transition: transform 0.5s ease-out;
+    transition: transform 0.1s ease-in-out;
+}
+
+.reset-btn:hover{
+    transform: scale(1.1);
 }
 
 .fav-color{
@@ -107,10 +110,21 @@ html, body{
     width: 40px;
     height: 20px;
     border: none;
-    background: transparent;
 }
 
-.brush-size-info{
+.option-list{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 12px;
+}
+
+.option-info-list{
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.option-info{
     font-family: monospace;
     font-size: 10px;
     font-weight: lighter;

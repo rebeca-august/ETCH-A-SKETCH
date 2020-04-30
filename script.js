@@ -6,6 +6,14 @@ const optionButton = document.querySelector(".options-button");
 const backgroundColorInput = document.querySelector(".fav-color");
 const brushSizeInput = document.querySelector(".brush-size");
 
+window.addEventListener("keydown", (e) => {
+    grid.style.cursor = "grab";
+});
+
+window.addEventListener("keyup", (e) => {
+    grid.style.cursor = "auto";
+});
+
 optionButton.addEventListener("click", () => {
     optionButton.classList.toggle("spin");
     optionContainer.classList.toggle("active");
@@ -42,9 +50,14 @@ const createCell = size => {
 
     cell.addEventListener("mouseover", (e) => {
         const isLeftMouseButtonClicked = e.buttons === 1;
+        const isShiftButtonPressed = e.shiftKey === true;
 
         if (isLeftMouseButtonClicked) {
             cell.style.backgroundColor = `rgb(${random(256)}, ${random(256)}, ${random(256)})`;
+        }
+
+        if (isLeftMouseButtonClicked && isShiftButtonPressed) {
+            cell.style.backgroundColor = backgroundColorInput.value;
         }
     });
     grid.append(cell);
