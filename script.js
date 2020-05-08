@@ -7,7 +7,7 @@ const backgroundColorInput = document.querySelector(".fav-color");
 const brushSizeInput = document.querySelector(".brush-size");
 
 window.addEventListener("keydown", (e) => {
-    if (e.key === 'Shift') {
+    if (e.key === "Shift") {
         grid.style.cursor = "grab";
     }
 });
