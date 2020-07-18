@@ -50,6 +50,10 @@ const createCell = size => {
     cell.style.height = cellSize;
     cell.classList.add("cell");
 
+    cell.addEventListener("touchmove", (e) => {
+        cell.style.backgroundColor = `rgb(${random(256)}, ${random(256)}, ${random(256)})`;
+    });
+
     cell.addEventListener("mouseover", (e) => {
         const isLeftMouseButtonClicked = e.buttons === 1;
         const isShiftButtonPressed = e.shiftKey === true;
@@ -77,5 +81,3 @@ const createGrid = (gridSize) => {
 };
 
 createGrid(100);
-
-
